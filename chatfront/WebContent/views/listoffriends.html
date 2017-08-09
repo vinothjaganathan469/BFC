@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>LIST OF FRIEDNS</title>
+</head>
+<body>
+LIST OF  FRIENDS
+<table>
+<tr ng-repeat="f in friendsList">
+<td ng-hide="currentUser.username==f.fromId">{{f.fromId}}</td>
+<td ng-hide="currentUser.username==f.toId">{{f.toId}}</td>
+
+<td ng-hide="currentUser.username==f.fromId">
+<img src="http://localhost:8083/chatback/getimage/{{f.fromId}}" alt="image Not Available" width="30px" height="30px" class="img-rounded">
+</td>
+
+<td ng-hide="currentUser.username==f.toId">
+<img src="http://localhost:8083/chatback/getimage/{{f.toId}}" alt="image Not Available" width="30px" height="30px" class="img-rounded">
+</td>
+</tr>
+
+</table>
+</body>
+</html>

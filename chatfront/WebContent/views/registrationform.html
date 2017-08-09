@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>REGISTRATION</title>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+input[type=submit]:hover {
+  background-color:#45a049
+</style>
+<body>
+<div>
+<span style="color:red">{{error.message}}</span>
+<form>
+<button type="button" class="btn btn-primary">BFC - REGISTRATION</button>
+<br>
+<br>
+	
+<div class="col-md-5">
+<div class="form-group">
+ENTER USER NAME: <input type="text" ng-model="user.username" class="form-control" placeholder="Enter UserName">
+</div>
+</div>
+<br>
+
+<div class="col-md-5">
+<div class="form-group">
+ENTER FIRST NAME: <input type="text" ng-model="user.firstname" class="form-control" placeholder="Enter FirstName">
+</div>
+</div>
+<br>
+<br>
+<div class="col-md-5">
+<div class="form-group">
+ENTER LAST NAME: <input type="text" ng-model="user.lastname" class="form-control" placeholder="Enter LastName">
+</div>
+</div>
+<br>
+<br>
+<div class="col-md-5">
+<div class="form-group">
+ENTER E-MAIL ID: <input type="text" ng-model="user.email" class="form-control" placeholder="Enter Email">
+</div>
+</div>
+<br>
+<br>
+<div class="col-md-5">
+<div class="form-group">
+ENTER PASSWORD :<input type="password" ng-model="user.password" class="form-control" placeholder="Enter Password">
+</div>
+</div>
+<br>
+<br>
+<br>
+<div class="col-md-5">
+<div class="form-group">
+<br>SELECT ROLE
+<br>
+<input type="radio" ng-model="user.role"  value="Student"> STUDENT
+</div>
+</div>
+
+
+<div class="col-md-5">
+<div class="form-group">
+<input type="radio" ng-model="user.role" value="Alumini"> ALUMINI
+</div>
+</div>
+
+
+<div class="col-md-5">
+<div class="form-group">
+<input type="radio" ng-model="user.role"  value="Employee"> EMPLOYEE
+</div>
+</div>
+<br>
+<br>
+<div class="col-md-5">
+<div class="form-group">
+<input type="submit" value="REGISTER" ng-click="register()" class="form-control">
+</div>
+</div>
+<br>
+<br>
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JOB FORM</title>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<span>{{message}}</span>
+<form>
+<br>
+<br>
+<div class="col-md-10">
+<div class="form-group">
+ENTER JOB TITLE <input type="text" ng-model="job.jobTitle" class="form-control">
+</div>
+</div>
+<br>
+<br>
+<br>
+<div class="col-md-10">
+<div class="form-group">
+ENTER JOB DESCRIPTION <textarea ng-model="job.jobDescription" class="form-control"></textarea>
+</div>
+</div>
+<br>
+<br>
+<br>
+<div class="col-md-10">
+<div class="form-group">
+ENTER EXPERIENCE <input type="text" ng-model="job.yearsofExp" class="form-control">
+</div>
+</div>
+<br>
+<br>
+<br>
+<div class="col-md-10">
+<div class="form-group">
+ENTER SALARY <input type="text" ng-model="job.salary" class="form-control">
+</div>
+</div>
+<br>
+<br>
+<br>
+<div class="col-md-10">
+<div class="form-group">
+ ENTER REQUIRED SKILLS <input type="text" ng-model="job.skillsRequired" class="form-control">
+</div>
+</div>
+<br>
+<br>
+<br>
+<div class="col-md-10">
+<div class="form-group">
+ENTER LOCATION<input type="text" ng-model="job.location" class="form-control">
+</div>
+</div>
+<br>
+<br>
+<br>
+<div class="col-md-10">
+<div class="form-group">
+ENTER COMPANY NAME <input type="text" ng-model="job.companyName" class="form-control">
+</div>
+</div>
+<br>
+<br>
+<br>
+<div class="col-md-10">
+<div class="form-group">
+<input type="submit" value="SAVE JOB DETAILS" ng-click="saveJob()" class="form-control">
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</form>
+</body>
+</html>

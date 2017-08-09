@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>approvalform</title>
+</head>
+<body>
+<div class="row">
+<div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<div>{{blogPost.title}}</div>
+<span><strong>Created By:</strong>{{blogPost.createdBy.username}}</span>
+<span><strong>on: </strong>{{blogPost.postedOn | date:'medium'}}</span>
+</div>
+<div class="panel-body">{{blogPost.description}}</div>
+</div>
+</div>
+</div>
+<form>
+<input type="radio" ng-model="blogPost.approved" value="true">Approve<br>
+<input type="radio" ng-model="blogPost.approved" value="false">Reject<br>
+<button ng-click="updateApproval()">Update Approval</button>
+<!-- <button class="btn btn-default" ng-click="updateApproval()" value="update Status">Update Approval</button> -->
+</form>
+</body>
+</html> 

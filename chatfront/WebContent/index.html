@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" />
+<title>INDEX PAGE</title>
+</head>
+<body ng-app="myApp">
+
+<header>
+            <nav class="navbar navbar-inverse">
+            
+           <div class="container-fluid">
+		<button type="button" class="navbar-toggle collapsed" 
+   data-toggle="collapse" data-target="#collapse-example" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-gro"></span>BFC</a>
+                </div>
+<div class="collapse navbar-collapse" id="collapse-example">
+                <ul class="nav navbar-nav ">
+                
+ <!-- USER MODULE -->               
+ <li><a href="#/registration" ng-hide="currentUser.firstname"><span class="glyphicon glyphicon-registration-mark"></span> REGISTRATION</a></li>
+ <li><a href="#/login" ng-hide="currentUser.firstname"><span class="glyphicon glyphicon-log-in"></span> LOGIN</a></li>
+  <li><a href="#profilepic" ng-show="currentUser.username"><img src="http://localhost:8083/chatback/getimage/{{currentUser.username}}" alt="upload Picture" width="30px" height="30px" class="img-rounded"></a></li>
+ 
+  
+ 
+ <!-- JOB MODULE -->
+   <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown" ng-show="currentUser.username"> Job Module <b class="caret"></b></a>
+   <ul class="dropdown-menu">
+     <li><a href="#/savejob" ng-show="currentUser.role=='Admin'"> SAVE JOB DETAILS</a></li>
+     <li><a href="#/getalljobs" ng-show="currentUser.firstname"> GET ALL JOBS</a></li>
+     </ul>
+     </li> 
+  
+   <li><a href="#/edituserprofile" ng-show="currentUser.username">EDIT PROFILE</a></li>
+  
+  <!-- BLOG MODULE -->    
+  <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown" ng-show="currentUser.username"> Blog Module <b class="caret"></b></a>
+   <ul class="dropdown-menu">
+     <li><a href="#/saveblogpost">Add Blog Post </a></li>
+     <li><a href="#/getallblogs">View All Blogs </a></li>
+     </ul>
+     </li>
+     
+  
+ 
+  <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown" ng-show="currentUser.username"> Friend <b class="caret"></b></a>
+	 <ul class="dropdown-menu">
+	    <li><a href="#/suggestedusers">LIST OF SUGGEST USER</a></li>
+		<li><a href="#/pendingrequests">PENDING REQUEST</a></li>
+		<li><a href="#/listoffriends">FRIENDS</a></li>
+		</ul>
+		</li>
+		
+		<li><a href="#chat" ng-show="currentUser.username">CHAT </a></li>
+ 
+ <li><a href=""   ng-show="currentUser.firstname">WELCOME {{currentUser.firstname}} &nbsp; {{currentUser.lastname}}</a></li>
+ <li><a href="" ng-click="logout()" ng-show="currentUser.firstname">logout</a></li>
+ </ul>
+            </div>
+            </div>
+            
+            </nav>
+        </header>
+<div ng-view></div>
+</body>
+     <script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
+<!--  Angular JS ngRoute -->
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
+	<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-cookies.js"></script>
+
+ 
+     
+     <script type="text/javascript" src="js/app.js"></script>
+     <script type="text/javascript" src="controller/usercontroller.js"></script>
+     <script type="text/javascript" src="service/userservice.js"></script>
+     <script type="text/javascript" src="controller/jobcontroller.js"></script>
+      <script type="text/javascript" src="service/jobservice.js"></script>
+      <script type="text/javascript" src="controller/blogcontroller.js"></script>
+      <script type="text/javascript" src="service/blogpostservice.js"></script>
+      <script type="text/javascript" src="controller/blogdetailcontroller.js"></script>
+      <script type="text/javascript" src="controller/friendcontroller.js"></script>
+      <script type="text/javascript" src="service/friendservice.js"></script>
+      
+      <script src="js/sockjs/sockjs.js"></script>
+    <script src="js/stomp/dist/stomp.js"></script>
+
+   
+<script type="text/javascript" src="controller/chatcontroller.js"></script>
+<script type="text/javascript" src="service/chatservice.js"></script>
+
+
+  
+   
+
+</html>

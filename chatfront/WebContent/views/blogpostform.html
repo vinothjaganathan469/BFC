@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>blog post form</title>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head> 
+<body>
+
+
+{{message}}
+<form>
+<br>
+<div class="col-md-10">
+<div class="form-group">
+Enter Blog Title <input ng-model="blogPost.title" class="form-control">
+</div>
+</div>
+<br>
+<br>
+<div class="col-md-10">
+<div class="form-group">
+Enter Blog Description<textarea ng-model="blogPost.description" class="form-control"></textarea>
+</div>
+</div>
+<br>
+<br>
+<div class="col-md-10">
+<div class="form-group">
+<button class="btn btn-default" ng-click="saveBlogPost()" class="form-control">Post Blog</button>
+</div>
+</div>
+<br>
+<br>
+</form>
+
+
+</body>
+</html>
