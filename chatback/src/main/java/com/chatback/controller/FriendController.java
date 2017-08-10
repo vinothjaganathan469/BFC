@@ -56,6 +56,10 @@ public class FriendController {
 		  return new ResponseEntity<List<Friend>>(pendingRequests,HttpStatus.OK);
 	}
 	
+	
+	
+	
+	
 	@RequestMapping(value="/updatependingrequest/{fromId}/{status}",method=RequestMethod.PUT)
 	public ResponseEntity<?> updatependingRequests(@PathVariable String fromId,@PathVariable char status,HttpSession session) {
 		Users users=(Users)session.getAttribute("user");
@@ -66,6 +70,9 @@ public class FriendController {
 		  friendDao.updatePendingRequest(fromId, users.getUsername(),status);
 	        return new ResponseEntity<Void>(HttpStatus.OK);
 	}
+	
+	
+	
 	
 	@RequestMapping(value="/listoffriends",method=RequestMethod.GET)
 	public ResponseEntity<?> listOfFriends(HttpSession session) {

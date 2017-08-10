@@ -44,15 +44,7 @@ public class BlogController {
 	      }
 		  
 	}
-	/*
-	 * @param approved
-	 * @param session
-	 * @return
-	 * approved=0,list of blogs waiting for approval
-	 * approved=1,list of blogs which are approved
-	 * http://localhost:8081/backendproject/listofblogs/0
-	 * http://localhost:8081/backendproject/listofblogs/1
-	 */
+	 
 	@RequestMapping(value="/listofblogs/{approved}",method=RequestMethod.GET)
 	  public ResponseEntity<?> getAllBlogs(@PathVariable int approved,HttpSession session) {
 		  Users users=(Users)session.getAttribute("user");
