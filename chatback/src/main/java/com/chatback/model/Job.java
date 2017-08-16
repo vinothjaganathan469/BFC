@@ -12,7 +12,8 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="Job")
-public class Job {
+public class Job 
+{
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
     private int id;

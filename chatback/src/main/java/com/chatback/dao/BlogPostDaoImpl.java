@@ -7,7 +7,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
 import com.chatback.model.BlogPost;
 import com.chatback.dao.BlogPostDao;
 import com.chatback.model.BlogComment;
@@ -39,14 +38,17 @@ public class BlogPostDaoImpl implements BlogPostDao {
 		return blogPost;
 	}
 	
-	public void updateBlogPost(BlogPost blogPost) {
+	public void updateBlogPost(BlogPost blogPost)
+	{
 		Session session=sessionFactory.openSession();
 		session.update(blogPost);
 		session.flush();
 		session.close();
-		
-	}
-	public void addComment(BlogComment blogComment) {
+		}
+	
+	
+	public void addComment(BlogComment blogComment)
+	{
 		Session session=sessionFactory.openSession();
 		session.save(blogComment);
 		session.flush();

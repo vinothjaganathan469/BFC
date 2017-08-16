@@ -11,9 +11,9 @@ import org.springframework.stereotype.Component;
 @Table(name="users")
 @Component
 public class Users { 
-	@Id
+@Id
 private String username;
-	@Column	
+@Column	
 private String firstname;
 private String lastname;
 private String email;

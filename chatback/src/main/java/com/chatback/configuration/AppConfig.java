@@ -25,9 +25,8 @@ public class AppConfig
 	    dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:xe");
 	    dataSource.setUsername("VINOMARK");
 	    dataSource.setPassword("vinomark");
-	 
 	    return dataSource;
-	}	
+}	
 	
 	@Autowired
 	@Bean(name = "sessionFactory")
@@ -41,23 +40,25 @@ public class AppConfig
 		return sessionBuilder.buildSessionFactory();
 	}
 	
-	@Autowired
-	@Bean(name = "transactionManager")
-	public HibernateTransactionManager getTransactionManager(
-	        SessionFactory sessionFactory) {
+	
+@Autowired
+@Bean(name = "transactionManager")
+public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory) 
+	    {
 	    HibernateTransactionManager transactionManager = new HibernateTransactionManager(sessionFactory);	 
 	    return transactionManager;
-	}
+	     }
 	
 	
-	
-	        public void addResourceHandlers(ResourceHandlerRegistry registry){
+ public void addResourceHandlers(ResourceHandlerRegistry registry)
+	        {
 		    registry.addResourceHandler("/resources/**")
 		    .addResourceLocations("/WEB-INF/resources/");
 		    }
 	
 	@Bean(name = "multipartResolver")
-	public CommonsMultipartResolver getCommonsMultipartResolver() {
+	public CommonsMultipartResolver getCommonsMultipartResolver() 
+	{
 		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
 		multipartResolver.setMaxUploadSize(20971520); // 20MB
 		multipartResolver.setMaxInMemorySize(1048576);	// 1MB

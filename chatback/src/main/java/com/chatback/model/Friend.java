@@ -18,14 +18,19 @@ public class Friend {
 	private char status;
 	
 	
-	public int getId() {
-		return id;
+	public int getId() 
+	{
+	return id;
 	}
-	public void setId(int id) {
-		this.id = id;
+	
+	public void setId(int id)
+	{
+	this.id = id;
 	}
-	public String getFromId() {
-		return fromId;
+	
+	public String getFromId() 
+	{
+	return fromId;
 	}
 	public void setFromId(String fromId) {
 		this.fromId = fromId;
