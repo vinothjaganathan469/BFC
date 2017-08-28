@@ -1,15 +1,36 @@
 package com.chatback.controller;
+ //creating a package for blog controllr
 
 import java.util.Date;
+// Date class available in java.util package, this class encapsulates the current date and time.
+
 import java.util.List;
+  //List Interface is the subinterface of Collection.
+  //It contains methods to insert and delete elements in index basis.It is a factory of ListIterator interface.
 
 import javax.servlet.http.HttpSession;
+//this class to use bind objects view and manipulate information about a session such as the session identifier,
+// creation time, and last accessed time.
 
 import org.springframework.beans.factory.annotation.Autowired;
+ // Marks a constructor, field, setter method or config method as to be autowired by Spring's dependency injection facilities.
+
 import org.springframework.http.HttpStatus;
+// Marks a method or exception class with the status code() and reason() that should be returned.
+
+     //  1	1xx Informational responses
+     //  2	2xx Success
+     //  3	3xx Redirection
+     //  4	4xx Client errors
+     //  5	5xx Server errors
+
 import org.springframework.http.ResponseEntity;
-//import org.springframework.stereotype.Controller;
+//Extension of HttpEntity that adds a HttpStatus status code. Used in RestTemplate as well @Controller methods.
+//In RestTemplate, this class is returned by getForEntity() and exchange():
+
+
 import org.springframework.web.bind.annotation.RequestBody;
+//Annotation indicating a method parameter should be bound to the body of the web request. 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -105,14 +126,17 @@ public class BlogController {
 				  Error error=new Error(3,"UnAuthorized user");
 				  return new ResponseEntity<Error>(error,HttpStatus.UNAUTHORIZED);
 			}
-			try {
+			try 
+			        {
 				List<BlogComment> blogComments=blogPostDao.getBlogComments(blogId);
 				System.out.println(blogComments.size());
 				return new ResponseEntity<List<BlogComment>>(blogComments,HttpStatus.OK);
-			  }catch(Exception e) {
+			        }
+		          catch(Exception e) 
+			        {
 				  System.out.println(e.getMessage());
 				  return new ResponseEntity<Void>(HttpStatus.INTERNAL_SERVER_ERROR);
-			  }
+			         }
 				
 	         }
 	 
